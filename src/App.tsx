@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import FormList from "./components/FormList/FormList";
 import List from "./components/List/List";
 import { ListContextProvider } from "./contexts/ListContext";
