@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { useListContext } from "../../contexts/ListContext";
+import { useNewListContext } from "../../contexts/NewListContext";
 
 export default function FormList() {
-	const { dispatch } = useListContext();
+	const { addState } = useNewListContext();
 
 	const [title, setTitle] = useState("");
 
@@ -11,7 +11,7 @@ export default function FormList() {
 	};
 
 	const handleClick = () => {
-		dispatch({ type: "ADD", payload: title });
+		addState(title);
 	};
 
 	return (
