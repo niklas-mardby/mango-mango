@@ -3,7 +3,6 @@ import { useState } from "react";
 
 export default function NewList() {
 	const { state, addState } = useNewListContext();
-
 	const [title, setTitle] = useState("");
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -13,6 +12,7 @@ export default function NewList() {
 	const handleClick = () => {
 		addState(title);
 	};
+
 	return (
 		<div>
 			<h1>FormList</h1>
