@@ -9,6 +9,7 @@ import { createContext, useContext, useMemo, useState } from "react";
 type NewListContextType = {
 	state: string[];
 	addState: (s: string) => void;
+	resetState: () => void;
 };
 
 // skapa contexten och typa upp vad den innehåller
@@ -38,7 +39,11 @@ export function NewListContextProvider({
 		setState((prev) => [...prev, newString]);
 	};
 
-	const value = useMemo(() => ({ state, addState }), [state]);
+	const resetState = () => {
+		setState([]);
+	};
+
+	const value = useMemo(() => ({ state, addState, resetState }), [state]);
 
 	return (
 		<NewListContext.Provider value={value}>
