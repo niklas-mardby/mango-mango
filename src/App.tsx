@@ -1,6 +1,5 @@
 import "./App.scss";
-import FormList from "./components/FormList/FormList";
-import List from "./components/List/List";
+import NewList from "./components/NewList/NewList";
 import { NewListContextProvider } from "./contexts/NewListContext";
 
 function App() {
@@ -8,8 +7,7 @@ function App() {
 		<NewListContextProvider>
 			<h1>🥭 mango-mango 🥭</h1>
 			<p>a demo for students</p>
-			<FormList />
-			<List />
+			<NewList />
 		</NewListContextProvider>
 	);
 }

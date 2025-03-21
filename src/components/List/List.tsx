@@ -1,14 +1,14 @@
-import { useNewListContext } from "../../contexts/NewListContext";
+import { useListContext } from "../../contexts/ListContext";
 
 export default function List() {
-	const { state } = useNewListContext();
+	const { state } = useListContext();
 
 	return (
 		<div>
 			<h1>List</h1>
 			<ul>
-				{state.map((item) => (
-					<li key={item}>{item}</li>
+				{state.list.map((item, index) => (
+					<li key={index}>{item}</li>
 				))}
 			</ul>
 		</div>

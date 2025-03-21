@@ -1,8 +1,8 @@
+import { useNewListContext } from "../../contexts/NewListContext";
 import { useState } from "react";
-import { useListContext } from "../../contexts/ListContext";
 
-export default function FormList() {
-	const { dispatch } = useListContext();
+export default function NewList() {
+	const { state, addState } = useNewListContext();
 
 	const [title, setTitle] = useState("");
 
@@ -11,9 +11,8 @@ export default function FormList() {
 	};
 
 	const handleClick = () => {
-		dispatch({ type: "ADD", payload: title });
+		addState(title);
 	};
-
 	return (
 		<div>
 			<h1>FormList</h1>
@@ -26,6 +25,13 @@ export default function FormList() {
 				onChange={handleChange}
 			/>
 			<button onClick={handleClick}>Add</button>
+
+			<h1>List</h1>
+			<ul>
+				{state.map((item) => (
+					<li key={item}>{item}</li>
+				))}
+			</ul>
 		</div>
 	);
 }
